@@ -1,7 +1,5 @@
 module Bob exposing (..)
 
-import Char exposing (isDigit)
-import Regex exposing (regex)
 import String exposing (endsWith, trim, isEmpty, toUpper, toLower)
 
 hey : String -> String
