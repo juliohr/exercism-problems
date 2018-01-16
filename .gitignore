@@ -55,3 +55,6 @@ re-uses post partial
 elm-stuff
 # elm-repl generated files
 repl-temp-*
+
+# ruby related
+.ruby-version
