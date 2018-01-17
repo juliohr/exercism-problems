@@ -1,21 +1,17 @@
 class Hamming
   def self.compute(strand1, strand2)
-    if strandsEqualLength?(strand1, strand2)
-      calculate_hamming_distance(strand1, strand2)
-    else
-      raise ArgumentError
-    end
+    raise ArgumentError unless strandsLengthEqual?(strand1, strand2)
+    calculate_hamming_distance(strand1, strand2)
   end
 
   private
-  def self.strandsEqualLength?(strand1, strand2)
-    strand1.size == strand2.size
+
+  def self.strandsLengthEqual?(strand1, strand2)
+    strand1.length == strand2.length
   end
 
   def self.calculate_hamming_distance(strand1, strand2)
-    hamming_distance = 0
-    (0..strand1.size-1).each_with_index { |elem, i| hamming_distance+=1 if strand1[i] != strand2[i] }
-    hamming_distance
+    strand1.length.times.count { |i| strand1[i] != strand2[i] }
   end
 end
 
