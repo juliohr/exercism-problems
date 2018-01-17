@@ -1,6 +1,6 @@
 class Gigasecond
-  def self.from(timeInUtc)
-    Time.at(timeInUtc.tv_sec + 10E8)
+  def self.from(time)
+    time + 10**9
   end
 end
 
